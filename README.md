@@ -220,20 +220,6 @@ For [checkov](https://github.com/bridgecrewio/checkov) you need to specify each 
     "--skip-check", "CKV2_AWS_8",
   ]
 ```
-
-### infracost_breakdown
-
-`infracost_breakdown` executes `infracost breakdown` command and compare the estimated costs with those specified in the hook-config. `infracost breakdown` normally runs `terraform init`, `terraform plan`, and calls Infracost Cloud Pricing API (remote version or [self-hosted version](https://www.infracost.io/docs/cloud_pricing_api/self_hosted)).
-
-Unlike most other hooks, this hook triggers once if there are any changed files in the repository.
-
-1. `infracost_breakdown` supports [all `infracost breakdown` arguments](https://www.infracost.io/docs/#useful-options). The following example only shows costs:
-
-    ```yaml
-    - id: infracost_breakdown
-      args:
-        - --args=--path=./env/dev
-      verbose: true # Always show costs
     ```
     <!-- markdownlint-disable-next-line no-inline-html -->
     <details><summary>Output</summary>
